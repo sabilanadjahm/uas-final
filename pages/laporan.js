@@ -10,7 +10,6 @@ import {
 import Navbar from '@/components/Navbar';
 import ProtectedRoute from '@/components/ProtectedRoute';
 import { motion } from 'framer-motion';
-import html2pdf from 'html2pdf.js';
 
 function Laporan() {
   const [barangMasuk, setBarangMasuk] = useState([]);
@@ -48,8 +47,9 @@ function Laporan() {
     );
   };
 
-  const handleExportPDF = () => {
-    if (typeof window !== 'undefined') { // <-- pastikan hanya di browser
+  const handleExportPDF = async () => {
+    if (typeof window !== 'undefined') {
+      const html2pdf = (await import('html2pdf.js')).default;
       const element = printRef.current;
       const opt = {
         margin: 0.5,
