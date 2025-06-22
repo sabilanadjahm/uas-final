@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import ProtectedRoute from '@/components/ProtectedRoute';import Navbar from '@/components/Navbar';
+import ProtectedRoute from '@/components/ProtectedRoute';
+import Navbar from '@/components/Navbar';
 import { useRouter } from 'next/router';
 import dynamic from 'next/dynamic';
 import { db } from '@/lib/firebase';
@@ -58,12 +59,6 @@ export default function Dashboard() {
           <h2 className="text-md font-semibold text-[#A98467]">
             Role: {role === 'admin' ? '👩‍🍳 Penanggung Jawab Dapur' : '🧑‍💼 Supervisor Produksi'}
           </h2>
-          <button
-            onClick={() => router.push('/scan-produk')}
-            className="bg-[#FFB5A7] hover:bg-[#FFA69E] text-white px-5 py-2 rounded-full font-semibold shadow transition-all duration-300"
-          >
-            🔍 Scan Barcode
-          </button>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
