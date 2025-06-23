@@ -36,6 +36,8 @@ export default function Navbar() {
       {role === 'manager' && (
         <Link href="/laporan" className="hover:text-[#344e41] transition">📊 Laporan</Link>
       )}
+      {/* Semua role bisa akses Kontak */}
+      <Link href="/kontak" className="hover:text-[#344e41] transition">📇 Kontak</Link>
     </>
   );
 
